@@ -1,135 +1,110 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Local Time Finder</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <main class="app">
+      <header class="page-header">
+        <h1>Local Time Finder</h1>
+        <p class="muted">
+          Find the current local time for cities and locations across the United
+          States.
+        </p>
+      </header>
 
-        <header class="page-header">
-            <h1>Local Time Finder</h1>
-            <p class="muted">
-                Find the current local time for cities and locations across the United States.
-            </p>
-        </header>
-
-        <div class="columns">
-
-            <div class="primary-column">
-
-                <section class="panel">
-                    <div class="row">
-                        <h2>Search for a location</h2>
-                        <span class="muted">USA + selected international cities</span>
-                    </div>
-
-                    <p class="muted">
-                        Enter a restaurant address, city, or state to see its local date and time.
-                    </p>
-
-                    <input
-                        id="q"
-                        class="field"
-                        placeholder="e.g. 200 Buttercup Creek Blvd, Cedar Park, TX 78613"
-                    >
-
-                    <button id="go" class="btn">
-                        Get Local Time
-                    </button>
-
-                    <div id="error" role="status"></div>
-                </section>
-
-                <section id="result" class="panel" hidden>
-                    <div class="muted">
-                        SEARCH RESULT.CURRENT LOCAL TIME
-                    </div>
-
-                    <h2 id="place" style="margin-top:7px"></h2>
-
-                    <div id="clock" class="time">--:--:--</div>
-
-                    <strong id="zone"></strong>
-
-                    <div id="offset" class="muted" style="margin-top:5px"></div>
-
-                    <div class="stats" style="margin-top:17px">
-
-                        <div class="stat">
-                            <span class="muted">DATE</span>
-                            <strong id="date"></strong>
-                        </div>
-
-                        <div class="stat">
-                            <span class="muted">DAY</span>
-                            <strong id="day"></strong>
-                        </div>
-
-                    </div>
-
-                    <div class="row" style="margin-top:14px">
-                        <span class="muted">
-                            Live clock. Updates every second
-                        </span>
-
-                        <button id="copy" class="smallbtn">
-                            Copy details
-                        </button>
-                    </div>
-
-                    <div id="copied" class="muted"></div>
-                </section>
-
+      <div class="columns">
+        <div class="primary-column">
+          <section class="panel">
+            <div class="row">
+              <h2>Search for a location</h2>
+              <span class="muted">USA + selected international cities</span>
             </div>
 
-            <aside class="secondary-column" aria-label="Location shortcuts">
+            <p class="muted">
+              Enter a restaurant address, city, or state to see its local date
+              and time.
+            </p>
 
-                <section class="panel">
-                    <div class="row">
-                        <h2>Recently searched</h2>
+            <input
+              id="q"
+              class="field"
+              placeholder="e.g. 200 Buttercup Creek Blvd, Cedar Park, TX 78613"
+            />
 
-                        <button id="clear" class="smallbtn">
-                            Clear history
-                        </button>
-                    </div>
+            <button id="go" class="btn">Get Local Time</button>
 
-                    <div
-                        id="recent"
-                        class="list"
-                        style="margin-top:12px"
-                    ></div>
+            <div id="error" role="status"></div>
+          </section>
 
-                    <p id="empty" class="muted">
-                        Your recent searches will appear here.
-                    </p>
-                </section>
+          <section id="result" class="panel" hidden>
+            <div class="muted">SEARCH RESULT.CURRENT LOCAL TIME</div>
 
-                <section class="panel">
-                    <h2>Popular USA locations</h2>
+            <h2 id="place" style="margin-top: 7px"></h2>
 
-                    <div
-                        id="popular"
-                        class="popular"
-                        style="margin-top:12px"
-                    ></div>
-                </section>
+            <div id="clock" class="time">--:--:--</div>
 
-            </aside>
+            <strong id="zone"></strong>
 
+            <div id="offset" class="muted" style="margin-top: 5px"></div>
+
+            <div class="stats" style="margin-top: 17px">
+              <div class="stat">
+                <span class="muted">DATE</span>
+                <strong id="date"></strong>
+              </div>
+
+              <div class="stat">
+                <span class="muted">DAY</span>
+                <strong id="day"></strong>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 14px">
+              <span class="muted"> Live clock. Updates every second </span>
+
+              <button id="copy" class="smallbtn">Copy details</button>
+            </div>
+
+            <div id="copied" class="muted"></div>
+          </section>
         </div>
 
-        <p class="muted footnote">
-            Recent searches are stored in this browser. State-only lookups may be
-            approximate in states with multiple time zones.
-        </p>
+        <aside class="secondary-column" aria-label="Location shortcuts">
+          <section class="panel">
+            <div class="row">
+              <h2>Recently searched</h2>
 
+              <button id="clear" class="smallbtn">Clear history</button>
+            </div>
+
+            <div id="recent" class="list" style="margin-top: 12px"></div>
+
+            <p id="empty" class="muted">
+              Your recent searches will appear here.
+            </p>
+          </section>
+
+          <section class="panel">
+            <h2>Popular USA locations</h2>
+
+            <div id="popular" class="popular" style="margin-top: 12px"></div>
+          </section>
+        </aside>
+      </div>
+
+      <p class="muted footnote">
+        Recent searches are stored in this browser. State-only lookups may be
+        approximate in states with multiple time zones.
+      </p>
     </main>
 
     <script src="app.js" defer></script>
-</body>
+  </body>
 </html>

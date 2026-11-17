@@ -8,6 +8,7 @@
         "buffalo": "America/New_York",
         "rochester": "America/New_York",
         "albany": "America/New_York",
+        "vinton": "America/New_York",
         "syracuse": "America/New_York",
         "washington dc": "America/New_York",
         "washington d.c.": "America/New_York",
